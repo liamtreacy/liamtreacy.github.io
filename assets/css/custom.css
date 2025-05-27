@@ -31,4 +31,23 @@ body {
     flex: 1;
     padding: 2em;
   }
+
+  .sidebar details {
+    margin-top: 0.5em;
+  }
+  
+  .sidebar summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.25em 0;
+  }
+  
+  .sidebar details ul {
+    padding-left: 1em;
+    margin: 0.25em 0;
+  }
+  
+  .sidebar details ul li {
+    padding: 0.25em 0;
+  }
   
