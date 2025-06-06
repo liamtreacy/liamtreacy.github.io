@@ -50,3 +50,10 @@ body {
     padding: 0.25em 0;
   }
   
+.content {
+  max-width: 75ch; /* roughly 150 characters */
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}
+
