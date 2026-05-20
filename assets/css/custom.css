@@ -57,3 +57,11 @@ body {
   text-align: left;
 }
 
+blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 1em;
+  margin-left: 0;
+  color: #666;
+  font-style: italic;
+}
+
