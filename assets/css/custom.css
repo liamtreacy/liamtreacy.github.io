@@ -1,67 +1,184 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
-  }
-  
-  .container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #f7f7f7;
-    padding: 1em;
-    border-right: 1px solid #ddd;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 0.5em 0;
-  }
-  
-  .content {
-    flex: 1;
-    padding: 2em;
-  }
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+}
 
-  .sidebar details {
-    margin-top: 0.5em;
-  }
-  
-  .sidebar summary {
-    cursor: pointer;
-    padding: 0.25em 0;
-  }
-  
-  .sidebar details ul {
-    padding-left: 1em;
-    margin: 0.25em 0;
-  }
-  
-  .sidebar details ul li {
-    padding: 0.25em 0;
-  }
-  
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 1.5em;
+  border-right: 1px solid #e1e4e8;
+  flex-shrink: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar > ul > li {
+  margin-bottom: 0.5em;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #2c3e50;
+  display: block;
+  padding: 0.5em 0.75em;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  transform: translateX(4px);
+}
+
 .content {
-  max-width: 75ch; /* roughly 150 characters */
+  flex: 1;
+  padding: 2em;
+  max-width: 75ch;
   margin: 0 auto;
-  padding: 1rem;
-  text-align: left;
+}
+
+.content a {
+  color: #1976d2;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.content a:hover {
+  border-bottom-color: #1976d2;
+}
+
+.sidebar details {
+  margin-top: 0.25em;
+}
+
+.sidebar summary {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  border-radius: 6px;
+  user-select: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.sidebar summary:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.sidebar summary::marker {
+  color: #1976d2;
+}
+
+.sidebar details[open] summary {
+  margin-bottom: 0.5em;
+}
+
+.sidebar details ul {
+  padding-left: 1.5em;
+  margin: 0;
+}
+
+.sidebar details ul li {
+  padding: 0.25em 0;
+}
+
+.sidebar details ul a {
+  font-size: 0.95em;
+  padding: 0.4em 0.75em;
 }
 
 blockquote {
-  border-left: 4px solid #ddd;
+  border-left: 4px solid #1976d2;
   padding-left: 1em;
   margin-left: 0;
-  color: #666;
+  color: #5a6c7d;
   font-style: italic;
+  background-color: #f8f9fa;
+  padding: 1em 1em 1em 1.5em;
+  border-radius: 4px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #1a202c;
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 0.3em;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e1e4e8;
+    padding: 1em;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  .sidebar > ul > li {
+    margin-bottom: 0;
+  }
+
+  .sidebar a:hover {
+    transform: none;
+  }
+
+  .sidebar details {
+    margin-top: 0;
+  }
+
+  .sidebar details ul {
+    padding-left: 1em;
+    display: block;
+  }
+
+  .content {
+    padding: 1.5em 1em;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+    padding: 1em;
+  }
+
+  .content {
+    padding: 1.5em;
+  }
+}
